@@ -1,4 +1,4 @@
-import 'random.dart';
+import '../random.dart';
 
 class Generator {
   static String id([length = 21]) {
