@@ -13,3 +13,13 @@ extension JsonParserExtension on String {
     }
   }
 }
+
+extension extractFieldExtension on Json {
+  /// 从json中抽出某个具体的数值，如果不是则报错
+  T extract<T>(String key) {
+    if (!containsKey(key)) throw Refuse("数据中缺少$key");
+    if (this[key] is! T) throw Refuse("数据$key的格式不正确，应该为${T.toString()}");
+
+    return this[key];
+  }
+}
