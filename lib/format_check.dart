@@ -1,4 +1,4 @@
-import 'package:tools/error_handling/app_error.dart';
+import 'package:tools/error_handling/fault.dart';
 
 /// 提供了一些常见格式的检查方法，返回布尔值
 class FormatChecker {

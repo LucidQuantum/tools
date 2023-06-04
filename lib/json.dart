@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:tools/error_handling/app_error.dart';
+import 'package:tools/error_handling/fault.dart';
 
 typedef Json = Map<String, dynamic>;
 
