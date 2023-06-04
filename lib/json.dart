@@ -9,7 +9,7 @@ extension JsonParserExtension on String {
     try {
       return jsonDecode(this);
     } catch (e) {
-      throw AppError.input("String转化为Json时失败：$this"); // 手动写json才会遇到的问题
+      throw Fault.input("String转化为Json时失败：$this"); // 手动写json才会遇到的问题
     }
   }
 }
@@ -21,8 +21,8 @@ extension extractFieldExtension on Json {
     if (nullable && this[key] == null) return;
 
     // 其他情况中，都必须有正确格式的value
-    if (!containsKey(key)) throw AppError.input("Json中缺少$key");
-    if (this[key] is! T) throw AppError.input("Json中$key的格式应该为${T.toString()}");
+    if (!containsKey(key)) throw Fault.input("Json中缺少$key");
+    if (this[key] is! T) throw Fault.input("Json中$key的格式应该为${T.toString()}");
   }
 
   /// 从json中抽出某个具体的数值，如果不是则报错

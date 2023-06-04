@@ -5,12 +5,12 @@ class FormatChecker {
   /// 手机号：11位数字，以1开头
   static void phone(String phone) {
     final RegExp pattern = RegExp(r'^1\d{10}$');
-    if (!pattern.hasMatch(phone)) throw AppError.input("手机号应该是11位数字，以1开头");
+    if (!pattern.hasMatch(phone)) throw Fault.input("手机号应该是11位数字，以1开头");
   }
 
   /// 短信验证码：4位数字
   static void sms(String sms) {
     final RegExp pattern = RegExp(r'^\d{4}$');
-    if (!pattern.hasMatch(sms)) throw AppError.input("短信验证码应该是4位数字");
+    if (!pattern.hasMatch(sms)) throw Fault.input("短信验证码应该是4位数字");
   }
 }
