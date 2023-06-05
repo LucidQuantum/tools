@@ -4,6 +4,11 @@ import 'package:tools/error_handling/fault.dart';
 
 typedef Json = Map<String, dynamic>;
 
+/// 一个可以转化为[Json]的对象
+abstract class Jsonable {
+  Json toJson();
+}
+
 extension JsonParserExtension on String {
   Json toJson() {
     try {
